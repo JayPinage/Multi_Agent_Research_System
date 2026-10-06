@@ -11,6 +11,9 @@ langchain-community>=0.2.0
 langchain-mistralai>=0.2.0
 mistralai>=1.0.0
 
+langchain-groq>=0.2.0
+groq>=0.4.0
+
 # ===========================
 # Tavily Search
 # ===========================
