@@ -4,14 +4,14 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from tools import search_web, scrape_url
 from dotenv import load_dotenv
+from langchain_groq import ChatGroq
 
 load_dotenv()
 
-# model setup
-# llm = ChatMistralAI(
-#     model="mistral-small-latest",
-#     temperature=0,
-# )
+llm = ChatGroq(
+    model="openai/gpt-oss-120b",
+    temperature=0
+)
 
 #1 Agent
 
