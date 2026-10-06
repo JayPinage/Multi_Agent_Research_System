@@ -8,16 +8,16 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # model setup
-llm = ChatMistralAI(
-    model="mistral-small-latest",
-    temperature=0,
-)
+# llm = ChatMistralAI(
+#     model="mistral-small-latest",
+#     temperature=0,
+# )
 
 #1 Agent
 
 def build_search_agent():
     return create_agent(
-        model=llm,
+        model="openai/gpt-oss-20b",
         tools=[search_web]
     )
 
@@ -25,7 +25,7 @@ def build_search_agent():
 
 def build_scrape_agent():
     return create_agent(
-        model=llm,
+        model="openai/gpt-oss-20b",
         tools=[scrape_url]
     )
 
