@@ -17,7 +17,7 @@ llm = ChatGroq(
 
 def build_search_agent():
     return create_agent(
-        model="openai/gpt-oss-20b",
+        model=llm,
         tools=[search_web]
     )
 
@@ -25,7 +25,7 @@ def build_search_agent():
 
 def build_scrape_agent():
     return create_agent(
-        model="openai/gpt-oss-20b",
+        model=llm,
         tools=[scrape_url]
     )
 
