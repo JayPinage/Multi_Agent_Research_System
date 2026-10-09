@@ -530,7 +530,7 @@ with col_pipeline:
     r = st.session_state.results
 
     def s(step):
-        steps = ["search", "reader", "writer", "critic", "guardrails", "evaluation"]
+        steps = ["search", "reader", "writer", "critic"]
         if step in r:
             return "done"
         if st.session_state.running:
@@ -542,9 +542,7 @@ with col_pipeline:
     rail_step("01", "Search Agent",  s("search"), "Gathers recent web information", False)
     rail_step("02", "Reader Agent",  s("reader"), "Scrapes & extracts deep content", False)
     rail_step("03", "Writer Chain",  s("writer"), "Drafts the full research report", False)
-    rail_step("04", "Critic Chain",  s("critic"), "Reviews evidence and report quality", False)
-    rail_step("05", "Guardrails", s("guardrails"), "Checks structure, length, and source URLs", False)
-    rail_step("06", "Evaluation", s("evaluation"), "Scores relevance, coverage, faithfulness, and citations", True)
+    rail_step("04", "Critic Chain",  s("critic"), "Reviews evidence and report quality", True)
 
 
 # ── Research execution with a Langfuse root trace ─────────────────────────────
